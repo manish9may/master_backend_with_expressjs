@@ -1,0 +1,226 @@
+{
+	"info": {
+		"_postman_id": "af0d9c8c-8511-49dd-b7c7-5a8a955cdc1b",
+		"name": "expressjs_prisma_postgres",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "37030643"
+	},
+	"item": [
+		{
+			"name": "Register User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"Manish Jain\",\r\n    \"email\" : \"test@wxample.com\",\r\n    \"password\" : \"test@123\",\r\n    \"password_confirmation\" : \"test@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5173/api/auth/register"
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"test@wxample.com\",\r\n    \"password\" : \"test@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5173/api/auth/login"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Profile",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6Ik1hbmlzaCBKYWluIiwiZW1haWwiOiJ0ZXN0QHd4YW1wbGUuY29tIiwicHJvZmlsZSI6bnVsbCwiaWF0IjoxNzI2MjUzOTEwLCJleHAiOjE3NTc3ODk5MTB9.ZyoUuAtMrYfJ0Vwe7FDsnRDuIHvREJ_xHYzgCHzoXRw"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5173/api/profile"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6Ik1hbmlzaCBKYWluIiwiZW1haWwiOiJ0ZXN0QHd4YW1wbGUuY29tIiwicHJvZmlsZSI6bnVsbCwiaWF0IjoxNzI2MjUzOTEwLCJleHAiOjE3NTc3ODk5MTB9.ZyoUuAtMrYfJ0Vwe7FDsnRDuIHvREJ_xHYzgCHzoXRw"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "profile",
+							"type": "file",
+							"src": "/C:/Users/manis/Downloads/WhatsApp Image 2024-05-30 at 17.28.06 (2).jpeg"
+						}
+					]
+				},
+				"url": "http://localhost:5173/api/profile/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Add News",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6Ik1hbmlzaCBKYWluIiwiZW1haWwiOiJ0ZXN0QHd4YW1wbGUuY29tIiwicHJvZmlsZSI6bnVsbCwiaWF0IjoxNzI2MjUzOTEwLCJleHAiOjE3NTc3ODk5MTB9.ZyoUuAtMrYfJ0Vwe7FDsnRDuIHvREJ_xHYzgCHzoXRw"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "News Title 3",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "News Content 3",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/manis/Downloads/WhatsApp Image 2024-04-15 at 01.05.02.jpeg"
+						}
+					]
+				},
+				"url": "http://localhost:5173/api/news"
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch News",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6Ik1hbmlzaCBKYWluIiwiZW1haWwiOiJ0ZXN0QHd4YW1wbGUuY29tIiwicHJvZmlsZSI6bnVsbCwiaWF0IjoxNzI2MjUzOTEwLCJleHAiOjE3NTc3ODk5MTB9.ZyoUuAtMrYfJ0Vwe7FDsnRDuIHvREJ_xHYzgCHzoXRw"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": "http://localhost:5173/api/news"
+			},
+			"response": []
+		},
+		{
+			"name": "GET News",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6Ik1hbmlzaCBKYWluIiwiZW1haWwiOiJ0ZXN0QHd4YW1wbGUuY29tIiwicHJvZmlsZSI6bnVsbCwiaWF0IjoxNzI2MjUzOTEwLCJleHAiOjE3NTc3ODk5MTB9.ZyoUuAtMrYfJ0Vwe7FDsnRDuIHvREJ_xHYzgCHzoXRw"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": "http://localhost:5173/api/news/2"
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE News",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6Ik1hbmlzaCBKYWluIiwiZW1haWwiOiJ0ZXN0QHd4YW1wbGUuY29tIiwicHJvZmlsZSI6bnVsbCwiaWF0IjoxNzI2MjUzOTEwLCJleHAiOjE3NTc3ODk5MTB9.ZyoUuAtMrYfJ0Vwe7FDsnRDuIHvREJ_xHYzgCHzoXRw"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": "http://localhost:5173/api/news/3"
+			},
+			"response": []
+		},
+		{
+			"name": "Update News",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6Ik1hbmlzaCBKYWluIiwiZW1haWwiOiJ0ZXN0QHd4YW1wbGUuY29tIiwicHJvZmlsZSI6bnVsbCwiaWF0IjoxNzI2MjUzOTEwLCJleHAiOjE3NTc3ODk5MTB9.ZyoUuAtMrYfJ0Vwe7FDsnRDuIHvREJ_xHYzgCHzoXRw"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "News Title 4",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "News Content 4",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://localhost:5173/api/news/3"
+			},
+			"response": []
+		}
+	]
+}
